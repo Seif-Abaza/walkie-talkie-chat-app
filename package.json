@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+  	"build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aaron Edwards, Kirsten Korevaar",
   "license": "ISC",
   "devDependencies": {
+    "html-webpack-plugin": "^2.26.0",
+    "html-webpack-template": "^6.0.0",
     "webpack": "^2.2.0-rc.7"
   }
 }
