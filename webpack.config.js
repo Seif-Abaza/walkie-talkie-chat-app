@@ -1,5 +1,7 @@
 const path = require('path');
+const merge = require('webpack-merge');
 
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackTemplate = require('html-webpack-template');
 
@@ -8,19 +10,46 @@ const PATHS = {
 	app: path.join(__dirname, 'app')
 }
 
-module.exports = {
+const COMMON = {
 	entry: {
 		app: PATHS.app
 	},
 	output: {
-		path: PATHS.build,
-		filename: '[name].[chunkhash:8].js'
+		path: PATHS.build
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'TimesheetR',
-			template: HtmlWebpackTemplate,
-			inject: false
-		})
-	]
+			new HtmlWebpackPlugin({
+				title: 'TimesheetR',
+				template: HtmlWebpackTemplate,
+				inject: false,
+				appMountId: 'root',
+			})
+		]
+}
+
+module.exports = function(env) {
+	console.log(`Building in environment: ${env}`);
+
+	switch(env) {
+		case 'prod':
+		return merge(COMMON, {
+			output: {
+				filename: '[name].[chunkhash:8].js'
+			}
+		});
+		case 'dev':
+		return merge(COMMON, {
+			output: {
+				filename: '[name].js'
+			},
+			devServer: {
+				stats: 'minimal',
+				hot: true,
+				inline: true
+			},
+			plugins: [
+				new webpack.HotModuleReplacementPlugin({})
+			]
+		});
+	}
 };
