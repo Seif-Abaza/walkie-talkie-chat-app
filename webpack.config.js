@@ -50,6 +50,7 @@ module.exports = function(env) {
 			output: {
 				filename: '[name].js'
 			},
+			devtool: 'eval-source-map',
 			devServer: {
 				stats: 'minimal',
 				hot: true,
