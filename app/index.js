@@ -1,4 +1,3 @@
 import message from './message';
 
-document.getElementById('root').innerHTML = message("world")
-
+document.getElementById('root').innerHTML = message('world!');

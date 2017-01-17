@@ -22,6 +22,11 @@ const COMMON = {
 			{
 				test: /\.(js|jsx)$/,
 				use: 'babel-loader'
+			},
+			{
+				test: /\.(js|jsx)$/,
+				use: 'eslint-loader',
+				enforce: 'pre'
 			}
 		]
 	},
