@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackTemplate = require('html-webpack-template');
+const nyanCat = require('nyan-progress-webpack-plugin');
 
 const PATHS = {
 	build: path.join(__dirname, 'build'),
@@ -62,7 +63,8 @@ module.exports = function(env) {
 				inline: true
 			},
 			plugins: [
-				new webpack.HotModuleReplacementPlugin({})
+				new webpack.HotModuleReplacementPlugin({}),
+				new nyanCat()
 			]
 		});
 	}
