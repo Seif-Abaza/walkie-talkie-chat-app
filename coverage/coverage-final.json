@@ -1,2 +1,0 @@
-{"/Users/kkorevaa/Projects/timesheetr-react/app/message.js": {"path":"/Users/kkorevaa/Projects/timesheetr-react/app/message.js","statementMap":{"0":{"start":{"line":2,"column":1},"end":{"line":2,"column":25}}},"fnMap":{"0":{"name":"message","decl":{"start":{"line":1,"column":24},"end":{"line":1,"column":31}},"loc":{"start":{"line":1,"column":38},"end":{"line":3,"column":1}}}},"branchMap":{},"s":{"0":1},"f":{"0":1},"b":{},"_coverageSchema":"332fd63041d2c1bcb487cc26dd0d5f7d97098a6c","hash":"a49e1c3501b5ca99120ee84d06639b9ce8993949"}
-}
