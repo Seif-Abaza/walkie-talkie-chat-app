@@ -1,1 +1,4 @@
-document.getElementById('root').innerHTML = 'Hello World'
+import message from './message';
+
+document.getElementById('root').innerHTML = message("world")
+

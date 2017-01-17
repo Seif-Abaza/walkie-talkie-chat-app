@@ -12,6 +12,10 @@
   "author": "Aaron Edwards, Kirsten Korevaar",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "html-webpack-plugin": "^2.26.0",
     "html-webpack-template": "^6.0.0",
     "webpack": "^2.2.0-rc.7",

@@ -17,6 +17,14 @@ const COMMON = {
 	output: {
 		path: PATHS.build
 	},
+	module: {
+		rules: [
+			{
+				test: /\.(js|jsx)$/,
+				use: 'babel-loader'
+			}
+		]
+	},
 	plugins: [
 			new HtmlWebpackPlugin({
 				title: 'TimesheetR',
