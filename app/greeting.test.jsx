@@ -4,9 +4,13 @@ import { shallow } from 'enzyme'
 import Greeting from './greeting';
 
 describe('Greeting', ()=>{
-	const greeting = shallow(<Greeting />);
-
 	it('should greet the world', ()=>{
-		expect(greeting.text()).toBe('I am greeting you.');
+		const greeting = shallow(<Greeting />);
+		expect(greeting.text()).toBe('Hello World');
 	});
+	it('should greet the someone', ()=>{
+		const greeting = shallow(<Greeting name="someone"/>);
+		expect(greeting.text()).toBe('Hello someone');
+	});
+
 });

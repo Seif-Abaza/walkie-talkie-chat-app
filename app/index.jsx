@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Greeting from './hello';
+import Greeting from './greeting';
 
-ReactDOM.render(<Greeting />, document.getElementById('root'));
+ReactDOM.render(<Greeting name="Emily" />, document.getElementById('root'));
