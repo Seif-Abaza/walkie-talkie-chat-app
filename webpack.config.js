@@ -7,12 +7,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackTemplate = require('html-webpack-template');
 const nyanCat = require('nyan-progress-webpack-plugin');
 
+const package = require('./package.json');
+
 const PATHS = {
 	build: path.join(__dirname, 'build'),
 	app: path.join(__dirname, 'app')
 }
 
-const COMMON = {
+function extractBundle(options) {
+  const entry = {};
+  entry[options.name] = options.entries;
+  return {
+    entry: entry,
+    plugins: [
+      new webpack.optimize.CommonsChunkPlugin({
+        names: [options.name, 'manifest'],
+      })
+    ]
+  };
+}
+
+const COMMON = merge({
 	entry: {
 		app: PATHS.app
 	},
@@ -43,7 +58,12 @@ const COMMON = {
 				appMountId: 'root',
 			})
 		]
-}
+},
+ extractBundle({
+			name: 'vendor',
+			entries: Object.keys(package.dependencies)
+		})
+)
 
 module.exports = function(env) {
 	console.log(`Building in environment: ${env}`);
