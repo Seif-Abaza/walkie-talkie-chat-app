@@ -18,6 +18,9 @@ const COMMON = {
 	output: {
 		path: PATHS.build
 	},
+	resolve: {
+		extensions: ['.js', '.jsx']
+	},
 	module: {
 		rules: [
 			{
