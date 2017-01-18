@@ -2,6 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 
 const webpack = require('webpack');
+const cleanWebpack = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackTemplate = require('html-webpack-template');
 const nyanCat = require('nyan-progress-webpack-plugin');
@@ -52,7 +53,10 @@ module.exports = function(env) {
 		return merge(COMMON, {
 			output: {
 				filename: '[name].[chunkhash:8].js'
-			}
+			},
+			plugins: [
+			  new cleanWebpack([PATHS.build], { root: process.cwd() })
+			]
 		});
 		case 'dev':
 		return merge(COMMON, {
