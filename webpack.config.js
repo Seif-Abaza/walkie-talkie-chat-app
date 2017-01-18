@@ -52,7 +52,7 @@ const COMMON = merge({
 	},
 	plugins: [
 			new HtmlWebpackPlugin({
-				title: 'TimesheetR',
+				title: 'Walking and Talking',
 				template: HtmlWebpackTemplate,
 				inject: false,
 				appMountId: 'root',
