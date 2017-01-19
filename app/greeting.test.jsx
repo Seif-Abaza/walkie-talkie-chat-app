@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 
 import Greeting from './greeting';
 
-describe('Greeting', ()=>{
+describe('<Greeting />', ()=>{
 	it('should greet the world', ()=>{
 		const greeting = shallow(<Greeting />);
 		expect(greeting.text()).toBe('Hello World');

@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Greeting from './greeting';
+import TextBox from './textbox';
 
-ReactDOM.render(<Greeting name="Emily" />, document.getElementById('root'));
+ReactDOM.render(<TextBox />, document.getElementById('root'));
