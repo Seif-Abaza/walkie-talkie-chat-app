@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TextBox from './textbox';
+import { InputBoxComponent } from './components/InputBox';
 
-ReactDOM.render(<TextBox />, document.getElementById('root'));
+ReactDOM.render(<InputBoxComponent onSubmit={text => alert(text)} />, document.getElementById('root'));
