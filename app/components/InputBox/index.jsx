@@ -17,7 +17,7 @@ export class InputBoxComponent extends React.Component {
     return (
       <div>
         <textarea onChange={this.onChange} />
-        <button onClick={() => this.props.onSubmit(this.state.text)}>Ack!</button>
+        <button onClick={() => this.props.onSubmit(this.state.text)}>Over!</button>
       </div>
     );
   }
