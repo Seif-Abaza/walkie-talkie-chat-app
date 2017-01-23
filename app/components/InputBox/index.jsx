@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 export class InputBoxComponent extends React.Component {
   constructor() {
@@ -27,4 +28,7 @@ InputBoxComponent.propTypes = {
   onSubmit: React.PropTypes.func.isRequired,
 };
 
-export default class InputBox extends InputBoxComponent {}
+function mapStateToProps() {}
+function mapDispatchToProps() {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(InputBoxComponent);
