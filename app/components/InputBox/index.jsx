@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { submitLine } from '../../actions/actions';
 
 export class InputBoxComponent extends React.Component {
   constructor() {
@@ -28,7 +29,8 @@ InputBoxComponent.propTypes = {
   onSubmit: React.PropTypes.func.isRequired,
 };
 
-function mapStateToProps() {}
-function mapDispatchToProps() {}
+const mapDispatchToProps = {
+  onSubmit: submitLine,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(InputBoxComponent);
+export default connect(() => ({}), mapDispatchToProps)(InputBoxComponent);

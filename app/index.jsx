@@ -3,16 +3,18 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import reduxLogger from 'redux-logger';
 import { Provider } from 'react-redux';
-import { InputBoxComponent } from './components/InputBox';
+import InputBox from './components/InputBox';
 import Conversation from './components/Conversation';
 
-function reducer(state) {
+function reducer(state, action) {
+  console.log(state);
+  console.log(action);
   return state;
 }
 
 const store = createStore(
   reducer,
-  { messages: ['jkdsgk', 'jdshfkgjk'] },
+  { messages: ['Go on', 'Type Something in the Box'] },
   applyMiddleware(reduxLogger),
 );
 
@@ -20,7 +22,7 @@ render(
   <Provider store={store}>
     <div>
       <Conversation />
-      <InputBoxComponent onSubmit={text => alert(text)} />
+      <InputBox />
     </div>
   </Provider>,
 
