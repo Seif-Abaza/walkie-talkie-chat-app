@@ -15,7 +15,6 @@ function reducer(state, action) {
 const store = createStore(
   reducer,
   { messages: ['Go on', 'Type Something in the Box'] },
-  applyMiddleware(reduxLogger),
 );
 
 render(
