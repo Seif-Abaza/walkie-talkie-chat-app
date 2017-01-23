@@ -5,16 +5,12 @@ import reduxLogger from 'redux-logger';
 import { Provider } from 'react-redux';
 import InputBox from './components/InputBox';
 import Conversation from './components/Conversation';
-
-function reducer(state, action) {
-  console.log(state);
-  console.log(action);
-  return state;
-}
+import rootReducer from './reducers/root-reducer';
 
 const store = createStore(
-  reducer,
+  rootReducer,
   { messages: ['Go on', 'Type Something in the Box'] },
+  applyMiddleware(reduxLogger()),
 );
 
 render(
