@@ -11,7 +11,8 @@ const package = require('./package.json');
 
 const PATHS = {
 	build: path.join(__dirname, 'build'),
-	app: path.join(__dirname, 'app')
+	app: path.join(__dirname, 'app'),
+	style: path.join(__dirname, 'app', 'assets', 'style.css')
 }
 
 function extractBundle(options) {
@@ -29,7 +30,8 @@ function extractBundle(options) {
 
 const COMMON = merge({
 	entry: {
-		app: PATHS.app
+		app: PATHS.app,
+		style: PATHS.style
 	},
 	output: {
 		path: PATHS.build
@@ -47,6 +49,14 @@ const COMMON = merge({
 				test: /\.(js|jsx)$/,
 				use: 'eslint-loader',
 				enforce: 'pre'
+			},
+			{
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					'css-loader'
+				]
+
 			}
 		]
 	},
